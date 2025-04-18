@@ -1,4 +1,32 @@
 
-body { font-family: Arial; margin: 0; padding: 0; background-color: #f7f9fb; }
-header, main { padding: 20px; text-align: center; }
-.button { padding: 10px 20px; background-color: #004e91; color: white; text-decoration: none; border-radius: 5px; }
+body { font-family: Arial; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
+.header-bar { background: #004e91; padding: 20px; color: white; text-align: center; }
+.logo { height: 50px; vertical-align: middle; }
+.container { max-width: 800px; margin: auto; padding: 20px; }
+.button, button {
+  background-color: #004e91;
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.button:hover, button:hover {
+  background-color: #003366;
+}
+.form-box {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.note {
+  font-size: 13px;
+  color: #555;
+}

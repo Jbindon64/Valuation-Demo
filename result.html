@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Valuation Results</title>
+  <meta charset="UTF-8" />
+  <title>Valuation Summary</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <main class="container centered">
-    <div id="summary">
-      <h1>Estimated Valuation</h1>
-      <p><strong>Range:</strong> $2.1M – $2.9M</p>
-      <button onclick="downloadPDF()">📄 Download My Valuation Summary</button>
+    <h1>Step 3: Estimated Valuation</h1>
+    <div class="card">
+      <p><strong>Estimated Valuation Range:</strong> $2.1M – $2.9M</p>
+      <p>This is a placeholder estimate. Full valuation will be determined following internal financial analysis and documentation review.</p>
+      <p>Your $100 payment will be credited toward any future full valuation engagement.</p>
+      <button onclick="downloadPDF()">📄 Download Valuation Summary</button>
     </div>
+    <a class="button" href="index.html">Start Over</a>
     <script src="js/jspdf.umd.min.js"></script>
     <script>
       async function downloadPDF() {
@@ -20,7 +23,7 @@
         doc.setFontSize(14);
         doc.text("Acuvizori Valuation Summary", 20, 20);
         doc.text("Estimated Valuation Range: $2.1M – $2.9M", 20, 40);
-        doc.text("Your $100 credit is applied toward full valuation pricing.", 20, 60);
+        doc.text("Initial payment credited toward final valuation.", 20, 60);
         doc.save("Acuvizori_Valuation_Summary.pdf");
       }
     </script>
