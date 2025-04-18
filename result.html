@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Estimated Valuation</title>
+  <meta charset="UTF-8">
+  <title>Valuation Results</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1>Estimated Valuation</h1>
-    </div>
-  </header>
   <main class="container centered">
-    <div class="card result-box">
-      <p>Thank you for submitting your information.</p>
-      <p>This is a placeholder for your valuation result. In the live version, a dynamic valuation estimate would appear here based on your inputs.</p>
-      <a class="button" href="index.html">Start Over</a>
+    <div id="summary">
+      <h1>Estimated Valuation</h1>
+      <p><strong>Range:</strong> $2.1M – $2.9M</p>
+      <button onclick="downloadPDF()">📄 Download My Valuation Summary</button>
     </div>
+    <script src="js/jspdf.umd.min.js"></script>
+    <script>
+      async function downloadPDF() {
+        const {{ jsPDF }} = window.jspdf;
+        const doc = new jsPDF();
+        doc.setFontSize(14);
+        doc.text("Acuvizori Valuation Summary", 20, 20);
+        doc.text("Estimated Valuation Range: $2.1M – $2.9M", 20, 40);
+        doc.text("Your $100 credit is applied toward full valuation pricing.", 20, 60);
+        doc.save("Acuvizori_Valuation_Summary.pdf");
+      }
+    </script>
   </main>
-  <footer>
-    <p>© 2025 Acuvizori Consulting</p>
-  </footer>
 </body>
 </html>
