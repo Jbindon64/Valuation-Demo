@@ -1,0 +1,52 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f6f9fc;
+  color: #333;
+}
+header {
+  background-color: #0077cc;
+  color: white;
+  padding: 30px 0;
+  text-align: center;
+}
+footer {
+  margin-top: 60px;
+  padding: 20px;
+  background-color: #eaeaea;
+  text-align: center;
+  font-size: 14px;
+}
+.button, button {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #0077cc;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+.button:hover, button:hover {
+  background-color: #005fa3;
+}
+main {
+  padding: 40px;
+  text-align: center;
+}
+.valuation-form {
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.valuation-form label {
+  margin-top: 10px;
+  text-align: left;
+}
+.valuation-form input {
+  padding: 10px;
+  margin-bottom: 10px;
+}
