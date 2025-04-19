@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Step 2: Financials</title>
+  <script>
+    function calculateEBITDA() {
+      const revenue = parseFloat(document.getElementById('revenue').value) || 0;
+      const expenses = parseFloat(document.getElementById('expenses').value) || 0;
+      const discretionary = parseFloat(document.getElementById('discretionary').value) || 0;
+
+      const adjustedExpenses = expenses - discretionary;
+      const ebitda = revenue - adjustedExpenses;
+      const ebitdaPercent = revenue > 0 ? (ebitda / revenue * 100).toFixed(1) : 0;
+      const estimatedValue = (ebitda * 4.5).toFixed(0);
+
+      document.getElementById('ebitda').innerText = "$" + ebitda.toLocaleString();
+      document.getElementById('ebitdaPercent').innerText = ebitdaPercent + "%";
+      document.getElementById('estimatedValue').innerText = "$" + parseFloat(estimatedValue).toLocaleString();
+    }
+  </script>
+</head>
+<body style="font-family: Arial, sans-serif; max-width: 700px; margin: auto; padding: 40px;">
+  <h1>Step 2: Financial Summary</h1>
+  <p>Enter your top-level numbers from the first page of your tax return:</p>
+
+  <label>Total Gross Revenue:</label><br>
+  <input type="number" id="revenue" style="width:100%; margin-bottom: 12px;"><br>
+
+  <label>Total Deductions / Operating Expenses:</label><br>
+  <input type="number" id="expenses" style="width:100%; margin-bottom: 12px;"><br>
+
+  <label>Discretionary Expenses to Remove (e.g. Owner’s Salary):</label><br>
+  <input type="number" id="discretionary" style="width:100%; margin-bottom: 20px;"><br>
+
+  <button onclick="calculateEBITDA()" style="padding: 10px 20px; font-size: 16px;">Calculate</button>
+
+  <h3 style="margin-top: 30px;">Results:</h3>
+  <p><strong>Estimated EBITDA:</strong> <span id="ebitda">$0</span></p>
+  <p><strong>EBITDA % of Revenue:</strong> <span id="ebitdaPercent">0%</span></p>
+  <p><strong>Estimated Valuation (4.5x EBITDA):</strong> <span id="estimatedValue">$0</span></p>
+
+  <br><br>
+  <a href="result.html" style="padding: 10px 20px; font-size: 16px; display: inline-block; text-decoration: none; border: 1px solid #000; border-radius: 6px;">Continue ➡️</a>
+</body>
+</html>
