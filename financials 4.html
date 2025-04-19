@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Step 2: Financial Inputs</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f6f8;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 60px auto;
+      background-color: #ffffff;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+    label {
+      display: block;
+      margin-top: 20px;
+      font-weight: bold;
+      color: #333;
+    }
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    .note {
+      margin-top: 30px;
+      color: #555;
+      font-size: 15px;
+      font-style: italic;
+    }
+    .results {
+      margin-top: 30px;
+      font-size: 17px;
+      color: #2c3e50;
+    }
+    .button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 24px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+    }
+  </style>
+  <script>
+    function calculateValuation() {
+      const revenue = parseFloat(document.getElementById('revenue').value) || 0;
+      const expenses = parseFloat(document.getElementById('expenses').value) || 0;
+      const addbacks = parseFloat(document.getElementById('discretionary').value) || 0;
+
+      const adjustedExpenses = expenses - addbacks;
+      const ebitda = revenue - adjustedExpenses;
+      const ebitdaPercent = revenue > 0 ? (ebitda / revenue * 100).toFixed(1) : 0;
+      const valuation = (ebitda * 4.5).toFixed(0);
+
+      document.getElementById('ebitdaResult').textContent = "$" + ebitda.toLocaleString();
+      document.getElementById('ebitdaPercent').textContent = ebitdaPercent + "%";
+      document.getElementById('valuationResult').textContent = "$" + parseFloat(valuation).toLocaleString();
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Step 2: Financial Inputs</h1>
+
+    <label>Total Revenue (Line 1 of Tax Return)</label>
+    <input type="number" id="revenue" />
+
+    <label>Total Operating Expenses</label>
+    <input type="number" id="expenses" />
+
+    <label>Discretionary Expenses to Remove (e.g., Owner’s Salary)</label>
+    <input type="number" id="discretionary" />
+
+    <p class="note">We will request a full copy of your tax return if you proceed with a comprehensive valuation.</p>
+
+    <div class="results">
+      <p><strong>Estimated EBITDA:</strong> <span id="ebitdaResult">$0</span></p>
+      <p><strong>EBITDA % of Revenue:</strong> <span id="ebitdaPercent">0%</span></p>
+      <p><strong>Estimated Valuation (4.5x EBITDA):</strong> <span id="valuationResult">$0</span></p>
+    </div>
+
+    <div style="text-align: center;">
+      <button onclick="calculateValuation()" class="button">See Estimated Valuation ➡️</button>
+    </div>
+  </div>
+</body>
+</html>
