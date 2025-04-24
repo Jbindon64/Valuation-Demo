@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Page</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .form-container {
+      background-color: #fff;
+      padding: 40px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      max-width: 600px;
+      margin: 40px auto;
+      border-radius: 8px;
+    }
+    .form-container label {
+      display: block;
+      margin-bottom: 8px;
+      text-align: left;
+      font-weight: bold;
+    }
+    .form-container input, .form-container select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Acuvizori Consulting</div>
+    <nav>
+      <a href="profile.html">Profile</a>
+      <a href="financials.html">Financials</a>
+      <a href="payment.html">Payment</a>
+      <a href="result.html">Results</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="form-container">
+      <h1>Profile Information</h1>
+      <form action="financials.html">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" required>
+        
+        <label for="agency">Agency Name:</label>
+        <input type="text" id="agency" name="agency" required>
+        
+        <label for="address">Agency Address:</label>
+        <input type="text" id="address" name="address" required>
+        
+        <label for="type">Agency Type:</label>
+        <select id="type" name="type" required>
+          <option value="">Select type...</option>
+          <option value="Independent">Independent</option>
+          <option value="Captive">Captive</option>
+        </select>
+        
+        <button type="submit" class="button">Next: Financials ➡️</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Acuvizori Consulting. All rights reserved.</p>
+  </footer>
+</body>
+</html>
