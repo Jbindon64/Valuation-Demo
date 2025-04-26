@@ -1,0 +1,7 @@
+/ /index.html 200
+/profile /profile.html 200
+/financials /financials.html 200
+/payment /payment.html 200
+/result /result.html 200
+
+# Cache-buster version 1.1
