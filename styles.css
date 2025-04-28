@@ -8,12 +8,22 @@ body {
   margin: auto;
 }
 .valuation-box {
-  background-color: #f0f0f0;
+  background-color: #e0f2ff; /* Light blue */
   padding: 20px;
   text-align: center;
   margin: 20px 0;
+  border: 1px solid #b0d4f1;
+  border-radius: 8px;
 }
 button {
+  background-color: #007bff; /* Blue */
+  color: #fff;
+  border: none;
   padding: 10px 20px;
   font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #0056b3;
 }
