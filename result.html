@@ -1,1 +1,62 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Valuation Results</title><link rel="stylesheet" href="styles.css?v=3.5"><script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script><script>document.addEventListener("DOMContentLoaded", () => {const {{ jsPDF }} = window.jspdf;if (jsPDF) {console.log("jsPDF loaded successfully.");} else {console.error("jsPDF failed to load.");}});function downloadPDF() {console.log("Download PDF clicked.");const {{ jsPDF }} = window.jspdf;if (!jsPDF) {alert("jsPDF not available.");return;}const doc = new jsPDF();doc.text("Hello World PDF test from Acuvizori!", 20, 20);doc.save("Test_PDF.pdf");}</script></head><body><header><div class="logo">Acuvizori Consulting</div><nav><a href="profile.html">Profile</a><a href="financials.html">Financials</a><a href="payment.html">Payment</a><a href="result.html">Results</a></nav></header><main><section class="summary-section"><h2>Executive Summary</h2><p>This valuation report provides an estimated market value for your insurance agency, combining key financial inputs across revenue, premium, and expenses.</p><h2>Estimated Valuation</h2><p><strong>Estimated Value:</strong> $850,000 (based on current financial inputs)</p><h2>Influencer Factors</h2><ul><li>Owner’s discretionary expenses identified for potential EBITDA improvements.</li><li>Market multiples applied across Revenue, Premium, and EBITDA bases.</li><li>Opportunity for valuation increase with premium growth or cost optimization.</li></ul></section><div class="hero"><h1>Download Your Valuation Summary</h1><a href="#" onclick="downloadPDF()" class="button">Download PDF</a></div></main><footer><p>&copy; 2025 Acuvizori Consulting. All rights reserved.</p></footer></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Valuation Result</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Valuation Estimate</h1>
+    <p>Thank you for completing your valuation. Below is your estimated agency value:</p>
+    <div class="valuation-box">
+      <h2 id="valuationAmount">$1,250,000</h2> <!-- Replace with dynamic value -->
+    </div>
+
+    <div class="influencer-factors">
+      <h3>Influencer Factors:</h3>
+      <ul>
+        <li>Owner's salary adjustments</li>
+        <li>Discretionary expenses</li>
+        <li>Premium retention rates</li>
+      </ul>
+    </div>
+
+    <div class="next-steps">
+      <h3>Next Steps:</h3>
+      <p>If you’d like a full 3-year cash flow analysis and formal prospectus, please contact us to proceed.</p>
+    </div>
+
+    <button id="downloadPdf">Download PDF</button>
+  </div>
+
+  <script>
+    document.getElementById('downloadPdf').addEventListener('click', function () {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+
+      // Content
+      doc.setFontSize(18);
+      doc.text('Valuation Estimate', 105, 20, null, null, 'center');
+      
+      doc.setFontSize(12);
+      doc.text('Estimated Valuation:', 20, 40);
+      const valuationAmount = document.getElementById('valuationAmount').innerText;
+      doc.text(valuationAmount, 60, 40);
+
+      doc.text('Influencer Factors:', 20, 60);
+      doc.text('- Owner\'s salary adjustments', 30, 70);
+      doc.text('- Discretionary expenses', 30, 80);
+      doc.text('- Premium retention rates', 30, 90);
+
+      doc.text('Next Steps:', 20, 110);
+      doc.text('For a full 3-year cash flow analysis and prospectus, please contact us.', 20, 120);
+
+      // Save
+      doc.save('valuation_summary.pdf');
+    });
+  </script>
+</body>
+</html>
