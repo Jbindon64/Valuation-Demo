@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Valuation Result</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Valuation Estimate (Updated)</h1>
+    <p>Thank you for completing your valuation. Below is your estimated agency value:</p>
+    <div class="valuation-box">
+      <h2 id="valuationAmount">$1,250,000</h2> <!-- Replace with dynamic value -->
+    </div>
+
+    <div class="influencer-factors">
+      <h3>Influencer Factors:</h3>
+      <ul>
+        <li>Owner's salary adjustments</li>
+        <li>Discretionary expenses</li>
+        <li>Premium retention rates</li>
+      </ul>
+    </div>
+
+    <div class="next-steps">
+      <h3>Next Steps:</h3>
+      <p>If you’d like a full 3-year cash flow analysis and formal prospectus, please contact us to proceed.</p>
+    </div>
+
+    <button id="downloadPdf">Download PDF</button>
+  </div>
+
+  <script>
+    document.getElementById('downloadPdf').addEventListener('click', function () {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+
+      // Content
+      doc.setFontSize(18);
+      doc.text('Valuation Estimate (Updated)', 105, 20, null, null, 'center');
+      
+      doc.setFontSize(12);
+      doc.text('Estimated Valuation:', 20, 40);
+      const valuationAmount = document.getElementById('valuationAmount').innerText;
+      doc.text(valuationAmount, 60, 40);
+
+      doc.text('Influencer Factors:', 20, 60);
+      doc.text('- Owner\'s salary adjustments', 30, 70);
+      doc.text('- Discretionary expenses', 30, 80);
+      doc.text('- Premium retention rates', 30, 90);
+
+      doc.text('Next Steps:', 20, 110);
+      doc.text('For a full 3-year cash flow analysis and prospectus, please contact us.', 20, 120);
+
+      // Save
+      doc.save('valuation_summary.pdf');
+    });
+  </script>
+</body>
+</html>
