@@ -1,29 +1,14 @@
-
-body {
+.background {
+  background-color: #f4f8ff;
+  color: #002b5c;
   font-family: Arial, sans-serif;
-  margin: 40px;
-}
-.container {
-  max-width: 600px;
-  margin: auto;
-}
-.valuation-box {
-  background-color: #e0f2ff; /* Light blue */
   padding: 20px;
-  text-align: center;
-  margin: 20px 0;
-  border: 1px solid #b0d4f1;
-  border-radius: 8px;
 }
-button {
-  background-color: #007bff; /* Blue */
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 4px;
-  cursor: pointer;
+a {
+  color: #0056b3;
+  text-decoration: none;
 }
-button:hover {
-  background-color: #0056b3;
+h1, h2 {
+  border-bottom: 2px solid #002b5c;
+  padding-bottom: 10px;
 }
